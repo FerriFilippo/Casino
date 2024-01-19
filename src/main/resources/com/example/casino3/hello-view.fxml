@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="698.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+  <tabs>
+    <Tab text="Conto">
+      <content>
+        <Pane prefHeight="200.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+    <Tab text="Slot Machine">
+      <content>
+        <Pane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <HBox prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X2" />
+              </children>
+            </HBox>
+            <HBox layoutY="40.0" prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X25" />
+              </children>
+            </HBox>
+            <HBox layoutY="80.0" prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X100" />
+              </children>
+            </HBox>
+            <HBox layoutX="170.0" prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X5" />
+              </children>
+            </HBox>
+            <HBox layoutX="170.0" layoutY="40.0" prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X50" />
+              </children>
+            </HBox>
+            <HBox layoutX="170.0" layoutY="80.0" prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X250" />
+              </children>
+            </HBox>
+            <HBox layoutX="349.0" prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X500" />
+              </children>
+            </HBox>
+            <HBox layoutX="349.0" layoutY="40.0" prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X75" />
+              </children>
+            </HBox>
+            <HBox layoutX="349.0" layoutY="80.0" prefHeight="40.0" prefWidth="160.0">
+              <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X1000" />
+              </children>
+            </HBox>
+            <HBox layoutX="34.0" layoutY="300.0" prefHeight="100.0" prefWidth="602.0" />
+          </children>
+        </Pane>
+      </content></Tab>
+    <Tab text="BlackJack">
+      <content>
+        <Pane prefHeight="200.0" prefWidth="200.0" />
+      </content></Tab>
+  </tabs>
+</TabPane>
