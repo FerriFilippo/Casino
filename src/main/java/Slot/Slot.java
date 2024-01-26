@@ -1,3 +1,5 @@
+package Slot;
+
 public class Slot {
     private int[] display;
 
