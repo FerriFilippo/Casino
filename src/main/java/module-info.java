@@ -7,4 +7,5 @@ module com.example.casino3 {
     exports com.example.casino3;
     exports Slot;
     opens Slot to javafx.fxml;
+
 }
