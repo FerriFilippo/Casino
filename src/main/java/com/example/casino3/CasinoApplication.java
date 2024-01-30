@@ -12,7 +12,7 @@ public class CasinoApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(CasinoApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("ciao!");
+        stage.setTitle("hello!");
         stage.setScene(scene);
         stage.show();
     }
