@@ -8,14 +8,121 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="698.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.casino3.CasinoController">
   <tabs>
     <Tab text="Conto">
-      <content>
-        <Pane prefHeight="200.0" prefWidth="200.0" />
-      </content>
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="470.0" prefWidth="698.0">
+                     <children>
+                        <Pane prefHeight="83.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="220.0" layoutY="-8.0" prefHeight="45.0" prefWidth="259.0" text="Conto">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="83.0" prefWidth="200.0">
+                           <children>
+                              <HBox layoutY="-3.0" prefHeight="85.0" prefWidth="692.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#AumentaConto" prefHeight="40.0" prefWidth="120.0" text="Aumenta" />
+                                    <Button mnemonicParsing="false" onAction="#DiminuisciConto" prefHeight="40.0" prefWidth="120.0" text="Diminuisci" />
+                                    <Label fx:id="lblDepositaConto" alignment="CENTER" prefHeight="45.0" prefWidth="259.0" text="0">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#DepositaConto" prefHeight="40.0" prefWidth="120.0" text="Deposita" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="83.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="226.0" prefHeight="45.0" prefWidth="259.0" text="Ritira fiches">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="83.0" prefWidth="200.0">
+                           <children>
+                              <HBox layoutX="-2.0" prefHeight="85.0" prefWidth="698.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#AumentaRitisaFiches" prefHeight="40.0" prefWidth="120.0" text="Aumenta" />
+                                    <Button mnemonicParsing="false" onAction="#DiminuisciRitisaFiches" prefHeight="40.0" prefWidth="120.0" text="Diminuisci" />
+                                    <Label fx:id="lblRitiraFiches" alignment="CENTER" prefHeight="45.0" prefWidth="259.0" text="0">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#RitiraFiches" prefHeight="40.0" prefWidth="120.0" text="Ritira" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="83.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="220.0" prefHeight="45.0" prefWidth="259.0" text="Ritira soldi">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="83.0" prefWidth="200.0">
+                           <children>
+                              <HBox layoutX="-6.0" layoutY="-3.0" prefHeight="85.0" prefWidth="929.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#AumentaRitisaSoldi" prefHeight="40.0" prefWidth="120.0" text="Aumenta" />
+                                    <Button mnemonicParsing="false" onAction="#DiminuisciRitisaSoldi" prefHeight="40.0" prefWidth="120.0" text="Diminuisci" />
+                                    <Label fx:id="lblRitiraSoldi" alignment="CENTER" prefHeight="45.0" prefWidth="259.0" text="0">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#RitiraSoldi" prefHeight="40.0" prefWidth="120.0" text="Ritira" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="83.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" layoutY="11.0" prefHeight="45.0" prefWidth="185.0" text="Conto Fiches:">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblFiches" layoutX="194.0" layoutY="11.0" prefHeight="45.0" prefWidth="149.0" text="0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="349.0" layoutY="11.0" prefHeight="45.0" prefWidth="97.0" text="Conto:">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblConto" layoutX="446.0" layoutY="11.0" prefHeight="45.0" prefWidth="149.0" text=" 0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </content>
     </Tab>
     <Tab text="Slot.Slot Machine">
       <content>
@@ -174,11 +281,6 @@
                 <Label alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="X1000" />
               </children>
             </HBox>
-                  <Button layoutX="253.0" layoutY="364.0" mnemonicParsing="false" onAction="#onGiocaSlotButtonClick" prefHeight="62.0" prefWidth="193.0" text="GIOCA">
-                     <font>
-                        <Font size="34.0" />
-                     </font>
-                  </Button>
                   <HBox layoutX="49.0" layoutY="156.0" prefHeight="157.0" prefWidth="579.0">
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
@@ -186,6 +288,20 @@
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
+                  <Pane layoutX="68.0" layoutY="366.0" prefHeight="80.0" prefWidth="583.0">
+                     <children>
+                        <Button layoutX="407.0" mnemonicParsing="false" onAction="#DiminuisciGiocata" prefHeight="40.0" prefWidth="75.0" text="Diminuisci" />
+                        <Label fx:id="lblimportoGiocato" alignment="CENTER" contentDisplay="CENTER" layoutX="332.0" layoutY="40.0" prefHeight="40.0" prefWidth="150.0" text="500" />
+                        <Label fx:id="lblRisultato" alignment="CENTER" contentDisplay="CENTER" layoutY="-6.0" prefHeight="40.0" prefWidth="220.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblImportoVinto" alignment="CENTER" contentDisplay="CENTER" layoutY="40.0" prefHeight="40.0" prefWidth="220.0" />
+                        <Button layoutX="503.0" mnemonicParsing="false" onAction="#onGiocaSlotButtonClick" prefHeight="80.0" prefWidth="80.0" text="Gioca" />
+                        <Button layoutX="332.0" mnemonicParsing="false" onAction="#AumentaGiocata" prefHeight="40.0" prefWidth="75.0" text="Aumenta" />
+                     </children>
+                  </Pane>
           </children>
         </Pane>
       </content></Tab>
