@@ -73,8 +73,14 @@ public class Conto {
         }
     }
 
+    public void gioca(){
+        Fiches -= Giocata;
+    }
 
 
+    public void ritira(int n){
+        Fiches += n;
+    }
 
 
     public int getGiocata() {

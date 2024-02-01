@@ -87,8 +87,9 @@ public class CasinoController {
     }
 
     public void onGiocaSlotButtonClick(ActionEvent actionEvent) {
+        conto.gioca();
         slot.Spin();
-        slot.CheckWin();
+        conto.ritira(conto.getGiocata() * slot.CheckWin());
     }
 
     public void onCartaButtonClick(ActionEvent actionEvent) {
@@ -97,6 +98,6 @@ public class CasinoController {
 
     public void onStopButtonClick(ActionEvent actionEvent) {
         blackJack.giocaB();
-        blackJack.vittoria();
+        conto.ritira((int)(conto.getGiocata() * blackJack.vittoria()));
     }
 }
