@@ -76,6 +76,7 @@ public class Conto {
 
 
 
+
     public int getGiocata() {
         return Giocata;
     }

@@ -1,8 +1,11 @@
 package com.example.casino3;
 
+import BlackJack.BlackJack;
 import Slot.Conto;
+import Slot.Slot;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 
 public class CasinoController {
     public Label lblFiches;
@@ -16,7 +19,12 @@ public class CasinoController {
     public Label Risultato;
     public Label importoGiocato;
 
+    Image[] carte = new Image[13];
+
+    Slot slot = new Slot();
+
     Conto conto= new Conto();
+    BlackJack blackJack = new BlackJack();
 
 
     public void AumentaConto(ActionEvent actionEvent) {
@@ -78,7 +86,17 @@ public class CasinoController {
         lblRitiraSoldi.setText(""+conto.getRitiraSoldi());
     }
 
-    public void GiocaSlot(ActionEvent actionEvent) {
+    public void onGiocaSlotButtonClick(ActionEvent actionEvent) {
+        slot.Spin();
+        slot.CheckWin();
+    }
 
+    public void onCartaButtonClick(ActionEvent actionEvent) {
+        blackJack.pescaG();
+    }
+
+    public void onStopButtonClick(ActionEvent actionEvent) {
+        blackJack.giocaB();
+        blackJack.vittoria();
     }
 }
