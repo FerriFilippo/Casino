@@ -19,16 +19,18 @@ public class BlackJack {
         pescaB();
     }
 
+
+    public boolean giocabile(){
+        return g.getSomma() <= 21 || !g.sballato();
+    }
     public void pescaG(){
-        g.aggiungi_carta(cartaG, m.pesca(n_carte));
+        g.aggiungi_carta(m.pesca(n_carte));
         n_carte++;
         cartaG++;
-        if(g.getSomma() == 21)
-            giocaB();
     }
 
     private void pescaB(){
-        banco.aggiungi_carta(cartaB, m.pesca(n_carte));
+        banco.aggiungi_carta(m.pesca(n_carte));
         n_carte++;
         cartaB++;
     }
@@ -56,5 +58,40 @@ public class BlackJack {
                 return 1;
             else
                 return 0;
+    }
+
+    public Giocatore getG(){
+        return g;
+    }
+    public Giocatore getBanco(){
+        return banco;
+    }
+
+    public int primoG(){
+        return g.getMano()[0].getValore();
+    }
+    public int secondoG(){
+        return g.getMano()[1].getValore();
+    }
+
+    public int primoB(){
+        return banco.getMano()[0].getValore();
+    }
+    public int secondoB(){
+        return banco.getMano()[1].getValore();
+    }
+
+    public int getCartaG(){
+        return cartaG;
+    }
+    public int getvaloreG(int n){
+        return g.getCarta(n).getValore();
+    }
+    public int getvaloreB(int n){
+        return banco.getCarta(n).getValore();
+    }
+
+    public int getCartaB(){
+        return cartaB;
     }
 }

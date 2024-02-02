@@ -4,6 +4,7 @@ import BlackJack.BlackJack;
 import Slot.Conto;
 import Slot.Slot;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,6 +25,8 @@ public class CasinoController {
     public Label lblRitiraFiches;
     public Label lblDepositaConto;
     public File f;
+    public Image img;
+    public FileInputStream file;
     public ImageView slot1;
     public ImageView slot2;
     public ImageView slot3;
@@ -31,12 +34,70 @@ public class CasinoController {
     public Label lblimportoGiocato1;
     public Label lblRisultatoBlack;
 
-    Image[] carte = new Image[13];
+    public ImageView b1, b2, b3, b4, b5, b6, g1, g2, g3, g4, g5, g6;
+    public ImageView[] giocatore, banco;
+    public Image[] carte = new Image[13];
 
     Slot slot = new Slot();
 
     Conto conto= new Conto();
-    BlackJack blackJack = new BlackJack();
+    public BlackJack blackJack;
+    @FXML
+    public void initialize() throws URISyntaxException, FileNotFoundException {
+        giocatore = new ImageView[6];
+        banco = new ImageView[6];
+        banco[0] = b1;
+        banco[1] = b2;
+        banco[2] = b3;
+        banco[3] = b4;
+        banco[4] = b5;
+        banco[5] = b6;
+        giocatore[0] = g1;
+        giocatore[1] = g2;
+        giocatore[2] = g3;
+        giocatore[3] = g4;
+        giocatore[4] = g5;
+        giocatore[5] = g6;
+        f = Paths.get(CasinoController.class.getResource("carte/asso.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[0] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/due.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[1] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/tre.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[2] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/quattro.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[3] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/cinque.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[4] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/sei.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[5] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/sette.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[6] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/otto.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[7] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/nove.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[8] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/dieci.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[9] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/jack.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[10] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/donna.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[11] = new Image(file);
+        f = Paths.get(CasinoController.class.getResource("carte/re.png").toURI()).toFile();
+        file = new FileInputStream(f);
+        carte[12] = new Image(file);
+    }
 
 //CONTO
     public void AumentaConto(ActionEvent actionEvent) {
@@ -129,8 +190,8 @@ public class CasinoController {
         else if (slot.getDisplay()[0] == 6){
              f  = Paths.get(CasinoController.class.getResource("Immagini/diamante.png").toURI()).toFile();
         }
-        FileInputStream file = new FileInputStream(f);
-        Image img = new Image(file);
+        file = new FileInputStream(f);
+        img = new Image(file);
         this.slot1.setImage(img);
         if (slot.getDisplay()[1] == 0){
             f  = Paths.get(CasinoController.class.getResource("Immagini/ciliegia.png").toURI()).toFile();
@@ -192,16 +253,43 @@ public class CasinoController {
 
     //BLACKJACK
     public void onCartaButtonClick(ActionEvent actionEvent) {
-        blackJack.pescaG();
+        if(blackJack.giocabile()) {
+            blackJack.pescaG();
+            giocatore[blackJack.getCartaG() - 1].setImage(carte[blackJack.getvaloreG(blackJack.getCartaG() - 1) - 1]);
+            giocatore[blackJack.getCartaG() - 1].setVisible(true);
+        }
     }
 
     public void onStopButtonClick(ActionEvent actionEvent) {
         blackJack.giocaB();
+        banco[0].setImage(carte[blackJack.primoB()-1]);
+        banco[0].setVisible(true);
+        for (int i = 2; i < blackJack.getCartaB(); i++) {
+            banco[i].setImage(carte[blackJack.getvaloreB(blackJack.getCartaB()-1)-1]);
+            banco[i].setVisible(true);
+        }
+        if(blackJack.vittoria() != 0)
+            lblRisultatoBlack.setText("hai vinto");
+        else
+            lblRisultatoBlack.setText("hai perso");
         conto.ritira((int)(conto.getGiocata() * blackJack.vittoria()));
+        lblImportoVintoBlack.setText("" + conto.getGiocata() * blackJack.vittoria());
     }
 
     public void onGiocaBlackjackButtonClick(ActionEvent actionEvent) {
-
+        blackJack = new BlackJack();
+        giocatore[2].setVisible(false);
+        giocatore[3].setVisible(false);
+        giocatore[4].setVisible(false);
+        giocatore[5].setVisible(false);
+        giocatore[0].setImage(carte[blackJack.primoG() -1 ]);
+        giocatore[1].setImage(carte[blackJack.secondoG() - 1]);
+        banco[1].setImage(carte[blackJack.secondoB() - 1]);
+        banco[0].setVisible(false);
+        banco[2].setVisible(false);
+        banco[3].setVisible(false);
+        banco[4].setVisible(false);
+        banco[5].setVisible(false);
     }
 
 }

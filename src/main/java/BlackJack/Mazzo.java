@@ -21,11 +21,12 @@ public class Mazzo {
                 if(i == 3){
                     s = "fiori";
                 }
-                Carta c = new Carta(i, s);
+                Carta c = new Carta(j, s);
                 mazzo[conta] = c;
                 conta++;
             }
         }
+        mescola();
     }
 
     private void mescola(){
