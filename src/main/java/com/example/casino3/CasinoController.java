@@ -23,12 +23,13 @@ public class CasinoController {
     public Label lblRitiraSoldi;
     public Label lblRitiraFiches;
     public Label lblDepositaConto;
-    public Label Risultato;
-    public Label importoGiocato;
     public File f;
     public ImageView slot1;
     public ImageView slot2;
     public ImageView slot3;
+    public Label lblImportoVintoBlack;
+    public Label lblimportoGiocato1;
+    public Label lblRisultatoBlack;
 
     Image[] carte = new Image[13];
 
@@ -37,7 +38,7 @@ public class CasinoController {
     Conto conto= new Conto();
     BlackJack blackJack = new BlackJack();
 
-
+//CONTO
     public void AumentaConto(ActionEvent actionEvent) {
         conto.Aumenta(1);
         lblDepositaConto.setText(""+ conto.getDepositaConto());
@@ -67,10 +68,12 @@ public class CasinoController {
     public void AumentaGiocata(ActionEvent actionEvent) {
         conto.Aumenta(4);
         lblimportoGiocato.setText(""+ conto.getGiocata());
+        lblimportoGiocato1.setText(""+ conto.getGiocata());
     }
     public void DiminuisciGiocata(ActionEvent actionEvent) {
         conto.Diminuisci(4);
         lblimportoGiocato.setText(""+ conto.getGiocata());
+        lblimportoGiocato1.setText(""+ conto.getGiocata());
     }
 
 
@@ -97,6 +100,7 @@ public class CasinoController {
         lblRitiraSoldi.setText(""+conto.getRitiraSoldi());
     }
 
+    //SLOT
     public void onGiocaSlotButtonClick(ActionEvent actionEvent) throws URISyntaxException, FileNotFoundException {
         if(conto.getFiches()>=conto.getGiocata()){
             conto.gioca();
@@ -177,8 +181,16 @@ public class CasinoController {
         file = new FileInputStream(f);
         img = new Image(file);
         this.slot3.setImage(img);
+        if (slot.CheckWin()!= 0){
+            lblRisultato.setText("hai vinto:");
+            lblImportoVinto.setText(""+ (conto.getGiocata()*slot.CheckWin()));
+        }else {
+            lblRisultato.setText("hai perso");
+            lblImportoVinto.setText(""+conto.getGiocata());
+        }
     }
 
+    //BLACKJACK
     public void onCartaButtonClick(ActionEvent actionEvent) {
         blackJack.pescaG();
     }
@@ -186,6 +198,10 @@ public class CasinoController {
     public void onStopButtonClick(ActionEvent actionEvent) {
         blackJack.giocaB();
         conto.ritira((int)(conto.getGiocata() * blackJack.vittoria()));
+    }
+
+    public void onGiocaBlackjackButtonClick(ActionEvent actionEvent) {
+
     }
 
 }

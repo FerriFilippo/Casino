@@ -319,7 +319,7 @@
                         <ImageView fitHeight="140.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
-                  <HBox layoutX="139.0" layoutY="235.0" prefHeight="140.0" prefWidth="405.0">
+                  <HBox layoutX="138.0" layoutY="200.0" prefHeight="140.0" prefWidth="405.0">
                      <children>
                         <ImageView fitHeight="140.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                         <ImageView fitHeight="140.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
@@ -329,16 +329,30 @@
                         <ImageView fitHeight="140.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
-                  <Button layoutX="139.0" layoutY="399.0" mnemonicParsing="false" onAction="#onCartaButtonClick" prefHeight="48.0" prefWidth="149.0" text="CARTA">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="410.0" layoutY="399.0" mnemonicParsing="false" onAction="#onStopButtonClick" prefHeight="48.0" prefWidth="149.0" text="STOP">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
+                  <Pane layoutX="19.0" layoutY="370.0" prefHeight="100.0" prefWidth="662.0">
+                     <children>
+                        <Button layoutX="507.0" layoutY="5.0" mnemonicParsing="false" onAction="#DiminuisciGiocata" prefHeight="40.0" prefWidth="75.0" text="Diminuisci" />
+                        <Label fx:id="lblimportoGiocato1" alignment="CENTER" contentDisplay="CENTER" layoutX="432.0" layoutY="45.0" prefHeight="40.0" prefWidth="150.0" text="0" />
+                        <Label fx:id="lblRisultatoBlack" alignment="CENTER" contentDisplay="CENTER" layoutY="-6.0" prefHeight="40.0" prefWidth="220.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblImportoVintoBlack" alignment="CENTER" contentDisplay="CENTER" layoutY="40.0" prefHeight="40.0" prefWidth="220.0" />
+                        <Button layoutX="582.0" mnemonicParsing="false" onAction="#onGiocaBlackjackButtonClick" prefHeight="80.0" prefWidth="80.0" text="Gioca" />
+                        <Button layoutX="432.0" layoutY="5.0" mnemonicParsing="false" onAction="#AumentaGiocata" prefHeight="40.0" prefWidth="75.0" text="Aumenta" />
+                        <Button layoutX="283.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onCartaButtonClick" prefHeight="48.0" prefWidth="149.0" text="CARTA">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="283.0" layoutY="50.0" mnemonicParsing="false" onAction="#onStopButtonClick" prefHeight="48.0" prefWidth="149.0" text="STOP">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
                </children></Pane>
       </content></Tab>
   </tabs>
