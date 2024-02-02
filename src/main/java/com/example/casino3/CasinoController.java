@@ -6,6 +6,13 @@ import Slot.Slot;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 
 public class CasinoController {
     public Label lblFiches;
@@ -18,6 +25,10 @@ public class CasinoController {
     public Label lblDepositaConto;
     public Label Risultato;
     public Label importoGiocato;
+    public File f;
+    public ImageView slot1;
+    public ImageView slot2;
+    public ImageView slot3;
 
     Image[] carte = new Image[13];
 
@@ -86,10 +97,86 @@ public class CasinoController {
         lblRitiraSoldi.setText(""+conto.getRitiraSoldi());
     }
 
-    public void onGiocaSlotButtonClick(ActionEvent actionEvent) {
-        conto.gioca();
-        slot.Spin();
-        conto.ritira(conto.getGiocata() * slot.CheckWin());
+    public void onGiocaSlotButtonClick(ActionEvent actionEvent) throws URISyntaxException, FileNotFoundException {
+        if(conto.getFiches()>=conto.getGiocata()){
+            conto.gioca();
+            slot.Spin();
+            conto.ritira(conto.getGiocata() * slot.CheckWin());
+            lblFiches.setText(""+conto.getFiches());
+        }
+        if (slot.getDisplay()[0] == 0){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/ciliegia.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[0] == 1){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/uva.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[0] == 2){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/anguria.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[0] == 3){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/limone.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[0] == 4){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/sette.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[0] == 5){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/triplo-sette.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[0] == 6){
+             f  = Paths.get(CasinoController.class.getResource("Immagini/diamante.png").toURI()).toFile();
+        }
+        FileInputStream file = new FileInputStream(f);
+        Image img = new Image(file);
+        this.slot1.setImage(img);
+        if (slot.getDisplay()[1] == 0){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/ciliegia.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[1] == 1){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/uva.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[1] == 2){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/anguria.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[1] == 3){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/limone.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[1] == 4){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/sette.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[1] == 5){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/triplo-sette.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[1] == 6){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/diamante.png").toURI()).toFile();
+        }
+        file = new FileInputStream(f);
+        img = new Image(file);
+        this.slot2.setImage(img);
+
+        if (slot.getDisplay()[2] == 0){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/ciliegia.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[2] == 1){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/uva.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[2] == 2){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/anguria.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[2] == 3){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/limone.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[2] == 4){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/sette.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[2] == 5){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/triplo-sette.png").toURI()).toFile();
+        }
+        else if (slot.getDisplay()[2] == 6){
+            f  = Paths.get(CasinoController.class.getResource("Immagini/diamante.png").toURI()).toFile();
+        }
+        file = new FileInputStream(f);
+        img = new Image(file);
+        this.slot3.setImage(img);
     }
 
     public void onCartaButtonClick(ActionEvent actionEvent) {
@@ -100,4 +187,5 @@ public class CasinoController {
         blackJack.giocaB();
         conto.ritira((int)(conto.getGiocata() * blackJack.vittoria()));
     }
+
 }
